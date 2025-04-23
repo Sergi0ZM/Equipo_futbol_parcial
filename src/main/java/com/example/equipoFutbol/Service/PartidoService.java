@@ -53,4 +53,8 @@ public class PartidoService {
             throw new RuntimeException("Error al obtener el partido por ID: " + e.getMessage(), e);
         }
     }
+    public List<Object[]> obtenerResultadosConNombresEquipos() {
+        return partidoRepository.obtenerResultadosConNombresEquipos();
+    }
+
 }

@@ -1,5 +1,6 @@
 package com.example.equipoFutbol.Model;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -24,8 +25,10 @@ public class Equipo {
     @Column(nullable = false)
     private LocalDate fundacion;
 
+    @JsonIgnore
     @OneToMany(mappedBy = "equipo", cascade = CascadeType.ALL)
     private List<Jugador> jugadores;
+    @JsonIgnore
     @OneToMany(mappedBy = "equipo", cascade = CascadeType.ALL)
     private List<Entrenador> entrenadores;
 }

@@ -1,5 +1,6 @@
 package com.example.equipoFutbol.Model;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -30,6 +31,7 @@ public class Jugador {
     @ManyToOne
     @JoinColumn(name = "id_equipo")
     private Equipo equipo;
+    @JsonIgnore
     @OneToMany(mappedBy = "jugador")
     private List<Estadisticas_jugador> estadisticas;
 

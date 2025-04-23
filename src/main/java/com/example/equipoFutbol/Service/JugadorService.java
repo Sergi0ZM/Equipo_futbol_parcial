@@ -56,4 +56,12 @@ public class JugadorService {
             throw new RuntimeException("Error al obtener el jugador por ID: " + e.getMessage(), e);
         }
     }
+    public List<Jugador> obtenerJugadoresPorEquipo(int idEquipo) {
+        return jugadorRepository.findByEquipo(idEquipo);
+    }
+    public List<Jugador> obtenerJugadoresConMasDeXGoles(int golesMinimos) {
+        return jugadorRepository.findJugadoresConMasDeXGoles(golesMinimos);
+    }
+
+
 }

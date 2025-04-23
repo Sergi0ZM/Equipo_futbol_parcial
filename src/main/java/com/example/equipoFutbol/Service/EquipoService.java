@@ -56,4 +56,8 @@ public class EquipoService {
             throw new RuntimeException("Error al obtener el equipo por ID: " + e.getMessage(), e);
         }
     }
+    public List<Object[]> obtenerGolesTotalesPorEquipo() {
+        return equipoRepository.obtenerGolesTotalesPorEquipo();
+    }
+
 }
